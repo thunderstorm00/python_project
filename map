@@ -1,0 +1,17 @@
+def f(x):
+    return x* x;
+
+l1 = map(f, [1,1,2,3,4])
+print(list(l1));
+
+#map :传入的第一个参数为f,第二个参数一次作用到序列的每个元素，返回的结果是Iterator。
+#list:计算整个序列，返回List
+l2 = [];
+for n in [1,2,3,4,5,6,7,8,9]:
+    l2.append(n);
+print(l2)
+
+#计算复杂的函数，例如将序列转化成字符串
+l3 = list(map(str,[1,2,3,4,5,6,7,8,9]))
+print(l3)
+

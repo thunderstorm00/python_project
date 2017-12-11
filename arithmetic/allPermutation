@@ -1,0 +1,32 @@
+#all permutation
+
+
+def printInfo():
+    print("test info")
+
+
+def swap(array, end, start):
+    temp = array[end]
+    array[end] = array[start]
+    array[start] = temp
+
+def isSwap(array, end, start):
+    for i in range(start, end):
+        if(array[i] == array[end]):
+            return False
+    return True
+
+def all_Permutation(array, n):
+    if n == len(array):
+        print(array)
+        return
+    for i in range(n, len(array)):
+        if not isSwap(array,i, n):
+            return
+        swap(array,i,n)
+        all_Permutation(array, n+1)
+        swap(array, i, n)
+
+if __name__ == '__main__':
+    array = ['a','c','c']
+    all_Permutation(array, 0)
