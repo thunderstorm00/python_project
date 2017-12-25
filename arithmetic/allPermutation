@@ -1,9 +1,6 @@
 #all permutation
-
-
 def printInfo():
     print("test info")
-
 
 def swap(array, end, start):
     temp = array[end]

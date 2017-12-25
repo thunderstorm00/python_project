@@ -57,11 +57,11 @@ accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 #开始训练
 with tf.Session() as sess:
     sess.run(init)
-    for epoch in range(50):
+    for epoch in range(20):
         for batch in range(batch_size):
             batch_xs, batch_ys = mnist.train.next_batch(batch_size)
             sess.run(train, feed_dict = {x : batch_xs, y : batch_ys})
-        if epoch%5 == 0:
+        if epoch%2 == 0:
             acc = sess.run(accuracy,feed_dict={x:mnist.test.images,y:mnist.test.labels})
             print("Iter " + str(epoch) + ",Testing Accuracy " + str(acc))
 
